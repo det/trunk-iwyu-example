@@ -1,0 +1,17 @@
+version: 0.1
+cli:
+  version: 1.7.0
+plugins:
+  sources:
+    - id: trunk
+      ref: v0.0.15
+      uri: https://github.com/trunk-io/plugins
+lint:
+  extra_compilation_flags:
+      - "-isystem"
+      - "external/llvm_toolchain_llvm/include/c++/v1"
+      - "-isystem"
+      - "external/llvm_toolchain_llvm/include/x86_64-unknown-linux-gnu/c++/v1"
+      - "-Wno-unused-command-line-argument"
+  enabled:
+    - include-what-you-use@0.19
